@@ -28,6 +28,12 @@
 		3181CB351525136500B1C43B /* Histogram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3181CB341525136500B1C43B /* Histogram.jpg */; };
 		D2F9B0A8152572A900672F7E /* SDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0A7152572A900672F7E /* SDetector.m */; };
 		D2F9B0C8152590FA00672F7E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */; };
+		D2F9B0D015259B3500672F7E /* AVCamCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0CF15259B3400672F7E /* AVCamCaptureManager.m */; };
+		D2F9B0D515259C1F00672F7E /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0D215259C1F00672F7E /* AVCamRecorder.m */; };
+		D2F9B0D615259C1F00672F7E /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0D415259C1F00672F7E /* AVCamUtilities.m */; };
+		D2F9B0D815259C3300672F7E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F9B0D715259C3300672F7E /* AssetsLibrary.framework */; };
+		D2F9B0DA15259C3700672F7E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F9B0D915259C3700672F7E /* ImageIO.framework */; };
+		D2F9B0DC1525A07900672F7E /* ismile_icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F9B0DB1525A07900672F7E /* ismile_icon114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,15 @@
 		D2F9B0A6152572A900672F7E /* SDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDetector.h; sourceTree = "<group>"; };
 		D2F9B0A7152572A900672F7E /* SDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDetector.m; sourceTree = "<group>"; };
 		D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D2F9B0CE15259B3400672F7E /* AVCamCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamCaptureManager.h; sourceTree = "<group>"; };
+		D2F9B0CF15259B3400672F7E /* AVCamCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCaptureManager.m; sourceTree = "<group>"; };
+		D2F9B0D115259C1F00672F7E /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		D2F9B0D215259C1F00672F7E /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		D2F9B0D315259C1F00672F7E /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		D2F9B0D415259C1F00672F7E /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
+		D2F9B0D715259C3300672F7E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D2F9B0D915259C3700672F7E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		D2F9B0DB1525A07900672F7E /* ismile_icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ismile_icon114.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F9B0DA15259C3700672F7E /* ImageIO.framework in Frameworks */,
+				D2F9B0D815259C3300672F7E /* AssetsLibrary.framework in Frameworks */,
 				D2F9B0C8152590FA00672F7E /* AudioToolbox.framework in Frameworks */,
 				316E422015250A8B00707E82 /* CoreData.framework in Frameworks */,
 				316E420E1524F04E00707E82 /* CoreImage.framework in Frameworks */,
@@ -87,6 +104,9 @@
 		316E41CA1524CE7D00707E82 = {
 			isa = PBXGroup;
 			children = (
+				D2F9B0DB1525A07900672F7E /* ismile_icon114.png */,
+				D2F9B0D915259C3700672F7E /* ImageIO.framework */,
+				D2F9B0D715259C3300672F7E /* AssetsLibrary.framework */,
 				D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */,
 				316E421F15250A8B00707E82 /* CoreData.framework */,
 				316E420D1524F04E00707E82 /* CoreImage.framework */,
@@ -131,6 +151,12 @@
 				316E41F01524CEA000707E82 /* MainViewController.h */,
 				316E41F11524CEA000707E82 /* MainViewController.m */,
 				316E41F21524CEA000707E82 /* MainViewController.xib */,
+				D2F9B0CE15259B3400672F7E /* AVCamCaptureManager.h */,
+				D2F9B0CF15259B3400672F7E /* AVCamCaptureManager.m */,
+				D2F9B0D115259C1F00672F7E /* AVCamRecorder.h */,
+				D2F9B0D215259C1F00672F7E /* AVCamRecorder.m */,
+				D2F9B0D315259C1F00672F7E /* AVCamUtilities.h */,
+				D2F9B0D415259C1F00672F7E /* AVCamUtilities.m */,
 				3181CB341525136500B1C43B /* Histogram.jpg */,
 				D2F9B0A6152572A900672F7E /* SDetector.h */,
 				D2F9B0A7152572A900672F7E /* SDetector.m */,
@@ -203,6 +229,7 @@
 				316E41F41524CEA000707E82 /* MainViewController.xib in Resources */,
 				316E42101524F42100707E82 /* img1.JPG in Resources */,
 				3181CB351525136500B1C43B /* Histogram.jpg in Resources */,
+				D2F9B0DC1525A07900672F7E /* ismile_icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +244,9 @@
 				316E41EA1524CE7E00707E82 /* AppDelegate.m in Sources */,
 				316E41F31524CEA000707E82 /* MainViewController.m in Sources */,
 				D2F9B0A8152572A900672F7E /* SDetector.m in Sources */,
+				D2F9B0D015259B3500672F7E /* AVCamCaptureManager.m in Sources */,
+				D2F9B0D515259C1F00672F7E /* AVCamRecorder.m in Sources */,
+				D2F9B0D615259C1F00672F7E /* AVCamUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,7 @@
 @synthesize imageView = _imageView;
 @synthesize customLayer = _customLayer;
 @synthesize prevLayer = _prevLayer;
+@synthesize captureManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +39,7 @@
     [self initCapture];
     [HUDView setTransform:CGAffineTransformMakeScale(1, -1)];
     
-    
+    captureManager = [[AVCamCaptureManager alloc] init];
 }
 
 - (void)viewDidUnload
@@ -232,6 +233,34 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 
 #pragma mark - Detect
+
+- (IBAction)captureStillImage:(id)sender {
+    // Capture a still image
+    //[[self captureManager] captureStillImage];
+    
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    
+    [library writeImageToSavedPhotosAlbum:[previewImgaeView.image CGImage]
+                              orientation:(ALAssetOrientation)[previewImgaeView.image imageOrientation]
+                          completionBlock:nil];
+    [library release];
+    
+    AudioServicesPlaySystemSound(1108);
+    // Flash the screen white and fade it out to give UI feedback that a still image was taken
+    UIView *flashView = [[UIView alloc] initWithFrame:[HUDView frame]];
+    [flashView setBackgroundColor:[UIColor whiteColor]];
+    [[[self view] window] addSubview:flashView];
+    
+    [UIView animateWithDuration:.4f
+                     animations:^{
+                         [flashView setAlpha:0.f];
+                     }
+                     completion:^(BOOL finished){
+                         [flashView removeFromSuperview];
+                         [flashView release];
+                     }
+     ];
+}
 
 - (void)updateButton {
     if (histogramImageView.hidden) {
@@ -435,7 +464,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                 
                 if (ratio >= currentLevel && autoON) {
                     NSLog(@"Capture At %f > %f", ratio,currentLevel);
-                    AudioServicesPlaySystemSound(1108);
+                    [self captureStillImage:nil];
                 }
             }            
             ////////////////////////////////////////////

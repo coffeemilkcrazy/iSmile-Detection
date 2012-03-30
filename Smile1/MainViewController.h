@@ -19,6 +19,10 @@
 #import "SDetector.h"
 
 #import <AudioToolbox/AudioToolbox.h>
+#import "AVCamCaptureManager.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <ImageIO/CGImageProperties.h>
 
 @interface MainViewController : UIViewController
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -66,10 +70,12 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) CALayer *customLayer;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *prevLayer;
+@property (nonatomic,retain) AVCamCaptureManager *captureManager;
 
 - (IBAction)toggleHUD:(id)sender;
 - (void)updateButton;
 - (IBAction)toggleAuto:(id)sender;
 - (IBAction)changeLevel:(id)sender;
+- (IBAction)captureStillImage:(id)sender;
 
 @end
