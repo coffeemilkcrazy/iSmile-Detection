@@ -27,10 +27,11 @@
 		3181CB3215250C9E00B1C43B /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */; };
 		3181CB351525136500B1C43B /* Histogram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3181CB341525136500B1C43B /* Histogram.jpg */; };
 		D2F9B0A8152572A900672F7E /* SDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0A7152572A900672F7E /* SDetector.m */; };
+		D2F9B0C8152590FA00672F7E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		316E41D51524CE7E00707E82 /* Smile1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smile1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		316E41D51524CE7E00707E82 /* Smile1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Smile1.app; path = iSmile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316E41D91524CE7E00707E82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		316E41DB1524CE7E00707E82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		316E41DD1524CE7E00707E82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +57,7 @@
 		3181CB341525136500B1C43B /* Histogram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Histogram.jpg; sourceTree = "<group>"; };
 		D2F9B0A6152572A900672F7E /* SDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDetector.h; sourceTree = "<group>"; };
 		D2F9B0A7152572A900672F7E /* SDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDetector.m; sourceTree = "<group>"; };
+		D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F9B0C8152590FA00672F7E /* AudioToolbox.framework in Frameworks */,
 				316E422015250A8B00707E82 /* CoreData.framework in Frameworks */,
 				316E420E1524F04E00707E82 /* CoreImage.framework in Frameworks */,
 				316E420C1524E83D00707E82 /* AVFoundation.framework in Frameworks */,
@@ -84,6 +87,7 @@
 		316E41CA1524CE7D00707E82 = {
 			isa = PBXGroup;
 			children = (
+				D2F9B0C7152590FA00672F7E /* AudioToolbox.framework */,
 				316E421F15250A8B00707E82 /* CoreData.framework */,
 				316E420D1524F04E00707E82 /* CoreImage.framework */,
 				316E420B1524E83D00707E82 /* AVFoundation.framework */,

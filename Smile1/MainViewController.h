@@ -18,6 +18,8 @@
 
 #import "SDetector.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+
 @interface MainViewController : UIViewController
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 {
@@ -48,7 +50,16 @@
 
     UIImage *currentImage;
     
+    IBOutlet UIButton *hudBt;
+    IBOutlet UIButton *autoBt;
+    IBOutlet UIProgressView *progressView;
+    BOOL autoON;
+    int oldDiffSUM ,newDiffSUM;
+    NSMutableArray *oldHistoArr, *newHistoArr;
     BOOL testBUG;
+    IBOutlet UISegmentedControl *segmentLevel;
+    
+    float currentLevel;
 }
 
 @property (nonatomic, retain) AVCaptureSession *captureSession;
@@ -57,5 +68,8 @@
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *prevLayer;
 
 - (IBAction)toggleHUD:(id)sender;
+- (void)updateButton;
+- (IBAction)toggleAuto:(id)sender;
+- (IBAction)changeLevel:(id)sender;
 
 @end

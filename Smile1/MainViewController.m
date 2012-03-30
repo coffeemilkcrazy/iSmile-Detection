@@ -11,15 +11,6 @@
 @interface MainViewController ()
 - (UIImage *) imageWithView:(UIView *)view;
 - (void)initCapture;
-
--(void)markFaces:(UIImage *)facePicture;
--(void)faceDetector;
--(int)smileProcess:(UIImage*)smileImg;
-
-- (IplImage *)CreateIplImageFromUIImage:(UIImage *)image;
-- (UIImage *)UIImageFromIplImage:(IplImage *)image;
-- (NSMutableArray *)getHistogramArray:(UIImage*)image;
-
 @end
 
 @implementation MainViewController
@@ -62,7 +53,8 @@
     
     NSLog(@"viewDidAppear");
     [super viewDidAppear:YES];
-    
+    [self updateButton];
+    [progressView setProgress:0.00];
 	// Create a new image picker instance:
     //	cameraPicker = [[UIImagePickerController alloc] init];
     //	cameraPicker.delegate = self;
@@ -239,6 +231,47 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 #pragma mark - Detect
 
+- (void)updateButton {
+    if (histogramImageView.hidden) {
+        hudBt.alpha = 0.5;
+    } else {
+        hudBt.alpha = 0.8;
+    }
+    
+    if (autoON) {
+        autoBt.alpha = 0.8;
+    } else {
+        autoBt.alpha = 0.5;
+    }
+}
+
+- (IBAction)changeLevel:(id)sender {
+    switch (segmentLevel.selectedSegmentIndex) {
+        case 1:
+            currentLevel = 2.4;
+            break;
+        case 2:
+            currentLevel = 2.8;
+            break;
+        case 3:
+            currentLevel = 3.4;
+            break;
+        case 4:
+            currentLevel = 3.8;
+            break;
+        case 5:
+            currentLevel = 4.4;
+            break;
+        default:
+            break;
+    }
+}
+
+- (IBAction)toggleAuto:(id)sender {
+    autoON = !autoON;
+    [self updateButton];
+}
+
 - (IBAction)toggleHUD:(id)sender {
     //HUDView.hidden = !HUDView.hidden;
     leftEye.hidden = !leftEye.hidden;
@@ -246,6 +279,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     mouth.hidden = !mouth.hidden;
     smileView.hidden = !smileView.hidden;
     histogramImageView.hidden = !histogramImageView.hidden;
+    scoreLB.hidden = !scoreLB.hidden;
+    [self updateButton];
 }
 
 -(void)markFaces:(UIImage *)facePicture
@@ -333,8 +368,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             //float topSpace = faceFeature.bounds.origin.y;
             float bottomSpace = 460- (faceFeature.bounds.origin.y+faceFeature.bounds.size.height);
             
-            CGRect cutRect = CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2, bottomSpace+(faceWidth*0.75), 
-                                        faceWidth*0.4, faceWidth*0.4);
+            CGRect cutRect = CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2, bottomSpace+(faceWidth*0.75)+faceWidth*0.02, 
+                                        faceWidth*0.4, faceWidth*0.2);
             
             mouthRect.origin.y += ((faceFeature.bounds.origin.y)+faceWidth*0.4);
             //mouthRect.origin.y += facePicture.bounds.size.height - (faceFeature.mouthPosition.y + faceWidth*0.2);
@@ -353,15 +388,54 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             
             NSMutableArray *histoData = [[SDetector detector] getHistogramArray:smileData];
             
-            int value = [[SDetector detector] smileProcess:histoData];
-            scoreLB.text = [NSString stringWithFormat:@"%d",value];
-            
+            //int value = [[SDetector detector] smileProcess:histoData];
+//            scoreLB.text = [NSString stringWithFormat:@"%d",value];
             
             histogramImageView.image = [[SDetector detector] drawHistogram:histoData];
             
             //////////////////////////////////////////////////////////////
             
             
+            oldHistoArr = newHistoArr;
+            newHistoArr = histoData;
+            
+            
+            int oldSum=0,oldAVG=0;
+            int newSum=0,newAVG=0;
+            
+            oldDiffSUM = newDiffSUM;
+            
+            newDiffSUM = 0;
+            if ([oldHistoArr count]>0) {
+                for (int i=0; i<256; i++) 
+                {
+                    oldSum += [[oldHistoArr objectAtIndex:i] intValue];
+                    newSum += [[newHistoArr objectAtIndex:i] intValue];
+                    
+                    newDiffSUM += 0.7*abs([[oldHistoArr objectAtIndex:i] intValue] - [[newHistoArr objectAtIndex:i] intValue]);
+                }
+                
+                oldAVG = oldSum/256;
+                newAVG = newSum/256;            
+                
+                float multi = ((float)(250-faceWidth)/250.0) /1.9 +1.0;
+                
+                float ratio = (float)newDiffSUM/(float)oldDiffSUM;
+                
+                if (ratio>2) {
+                    ratio = ratio*multi;
+                }
+                NSLog(@"FW: %f[%f]   [DIFF: %d]\t%f\t%f",faceWidth,multi,newDiffSUM,ratio,ratio/6.0);
+                
+                [progressView setProgress:ratio/6.0];
+                
+                scoreLB.text = [NSString stringWithFormat:@"%d",newDiffSUM];
+                
+                if (ratio >= currentLevel && autoON) {
+                    AudioServicesPlaySystemSound(1108);
+                }
+            }            
+            ////////////////////////////////////////////
             
             mouth.frame = mouthRect;
             // change the background color for the mouth to green

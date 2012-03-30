@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "316E41D41524CE7E00707E82"
-               BuildableName = "Smile1.app"
+               BuildableName = "iSmile.app"
                BlueprintName = "iSmile"
                ReferencedContainer = "container:Smile1.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "316E41D41524CE7E00707E82"
-            BuildableName = "Smile1.app"
+            BuildableName = "iSmile.app"
             BlueprintName = "iSmile"
             ReferencedContainer = "container:Smile1.xcodeproj">
          </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "316E41D41524CE7E00707E82"
-            BuildableName = "Smile1.app"
+            BuildableName = "iSmile.app"
             BlueprintName = "iSmile"
             ReferencedContainer = "container:Smile1.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "316E41D41524CE7E00707E82"
-            BuildableName = "Smile1.app"
+            BuildableName = "iSmile.app"
             BlueprintName = "iSmile"
             ReferencedContainer = "container:Smile1.xcodeproj">
          </BuildableReference>

@@ -24,26 +24,38 @@ static SDetector *detector = nil;
 }
 
 - (UIImage *)convertImageToGrayColor:(UIImage *)colorImage {
+    UIImage *grayImage = nil;
     
-    IplImage *img_color = [self CreateIplImageFromUIImage:colorImage];
-    IplImage *img_gray = cvCreateImage(cvGetSize(img_color), IPL_DEPTH_8U, 1);
-    cvCvtColor(img_color, img_gray, CV_BGR2GRAY);
-    
-    IplImage *img_gray2 = cvCreateImage(cvGetSize(img_color), IPL_DEPTH_8U, 1);
-    cvCvtColor(img_color, img_gray2, CV_BGR2GRAY);
-    
-    
-    IplImage *imageSmile = cvCreateImage(cvGetSize(img_gray), IPL_DEPTH_8U, 3);
-    for(int y=0; y<img_gray2->height; y++) {
-        for(int x=0; x<img_gray->width; x++) {
-            char *p = imageSmile->imageData + y * imageSmile->widthStep + x * 3;
-            *p = *(p+1) = *(p+2) = img_gray->imageData[y * img_gray->widthStep + x];
+    @try {
+        IplImage *img_color = [self CreateIplImageFromUIImage:colorImage];
+        IplImage *img_gray = cvCreateImage(cvGetSize(img_color), IPL_DEPTH_8U, 1);
+        cvCvtColor(img_color, img_gray, CV_BGR2GRAY);
+        
+        IplImage *img_gray2 = cvCreateImage(cvGetSize(img_color), IPL_DEPTH_8U, 1);
+        cvCvtColor(img_color, img_gray2, CV_BGR2GRAY);
+        
+        
+        IplImage *imageSmile = cvCreateImage(cvGetSize(img_gray), IPL_DEPTH_8U, 3);
+        for(int y=0; y<img_gray2->height; y++) {
+            for(int x=0; x<img_gray->width; x++) {
+                char *p = imageSmile->imageData + y * imageSmile->widthStep + x * 3;
+                *p = *(p+1) = *(p+2) = img_gray->imageData[y * img_gray->widthStep + x];
+            }
         }
+        grayImage = [self UIImageFromIplImage:imageSmile];
+        cvReleaseImage(&imageSmile);
+        
+        
     }
-    UIImage *grayImage = [self UIImageFromIplImage:imageSmile];
-    cvReleaseImage(&imageSmile);
+    @catch (NSException *exception) {
+        return nil;
+        NSLog(@"Error convertImageToGrayColor");
+    }
+    @finally {
+        return grayImage;
+    }
     
-    return grayImage;
+    
 }
 
 - (NSMutableArray *)getHistogramArray:(UIImage*)image
@@ -111,45 +123,55 @@ static SDetector *detector = nil;
 
 
 - (UIImage *)drawHistogram:(NSMutableArray *)array {
-    double max=0;
-    CvScalar pointXY;
     
-    for (int i=0; i<=254; i++) {
-        NSString *data = [array objectAtIndex:i];
-        if ([data doubleValue] > max) {
-            max = [data doubleValue];
-        }
-    }
+    UIImage *result = nil;
     
-    UIImage *histogramIMG = [UIImage imageNamed:@"Histogram.jpg"];
-    IplImage *histo_color = [self CreateIplImageFromUIImage:histogramIMG];
-    IplImage *histoOutput = cvCreateImage(cvGetSize(histo_color), IPL_DEPTH_8U, 3);
-    
-    for (int y=0; y < histo_color->width; y++) 
-    {
-        NSString *data = [array objectAtIndex:y];
-        long score = [data intValue];
-        float scale = (float)(score-1)/(float)max;
-        long head = (long)((float)histogramIMG.size.height*scale);
-        long finnish = histogramIMG.size.height-1 - head;
+    @try {
+        double max=0;
+        CvScalar pointXY;
         
-        for (long x=0; x<histo_color->height; x++) {
-            pointXY.val[0] = 255;
-            cvSet2D(histoOutput, x, y, pointXY);
+        for (int i=0; i<=254; i++) {
+            NSString *data = [array objectAtIndex:i];
+            if ([data doubleValue] > max) {
+                max = [data doubleValue];
+            }
         }
         
-        for (long x=histogramIMG.size.height-1; x > finnish ; x--) 
+        UIImage *histogramIMG = [UIImage imageNamed:@"Histogram.jpg"];
+        IplImage *histo_color = [self CreateIplImageFromUIImage:histogramIMG];
+        IplImage *histoOutput = cvCreateImage(cvGetSize(histo_color), IPL_DEPTH_8U, 3);
+        
+        for (int y=0; y < histo_color->width; y++) 
         {
-            pointXY.val[0] = 0;
-            cvSet2D(histoOutput, x, y, pointXY);
+            NSString *data = [array objectAtIndex:y];
+            long score = [data intValue];
+            float scale = (float)(score-1)/(float)max;
+            long head = (long)((float)histogramIMG.size.height*scale);
+            long finnish = histogramIMG.size.height-1 - head;
+            
+            for (long x=0; x<histo_color->height; x++) {
+                pointXY.val[0] = 255;
+                cvSet2D(histoOutput, x, y, pointXY);
+            }
+            
+            for (long x=histogramIMG.size.height-1; x > finnish ; x--) 
+            {
+                pointXY.val[0] = 0;
+                cvSet2D(histoOutput, x, y, pointXY);
+            }
         }
+        
+        result = [self UIImageFromIplImage:histoOutput];
+        cvReleaseImage(&histoOutput);
+        cvReleaseImage(&histo_color);
     }
-    
-    UIImage *result = [self UIImageFromIplImage:histoOutput];
-    cvReleaseImage(&histoOutput);
-    cvReleaseImage(&histo_color);
-    
-    return result;
+    @catch (NSException *exception) {
+        return nil;
+        NSLog(@"Error drawHistogram");
+    }
+    @finally {
+        return result;
+    }
 }
 
 #pragma mark -
