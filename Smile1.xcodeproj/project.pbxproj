@@ -26,6 +26,7 @@
 		3181CB3115250C9E00B1C43B /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2E15250C9E00B1C43B /* libopencv_imgproc.a */; };
 		3181CB3215250C9E00B1C43B /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */; };
 		3181CB351525136500B1C43B /* Histogram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3181CB341525136500B1C43B /* Histogram.jpg */; };
+		D2F9B0A8152572A900672F7E /* SDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F9B0A7152572A900672F7E /* SDetector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		3181CB2E15250C9E00B1C43B /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_imgproc.a; path = opencv_device/lib/libopencv_imgproc.a; sourceTree = "<group>"; };
 		3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_objdetect.a; path = opencv_device/lib/libopencv_objdetect.a; sourceTree = "<group>"; };
 		3181CB341525136500B1C43B /* Histogram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Histogram.jpg; sourceTree = "<group>"; };
+		D2F9B0A6152572A900672F7E /* SDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDetector.h; sourceTree = "<group>"; };
+		D2F9B0A7152572A900672F7E /* SDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDetector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				316E41F11524CEA000707E82 /* MainViewController.m */,
 				316E41F21524CEA000707E82 /* MainViewController.xib */,
 				3181CB341525136500B1C43B /* Histogram.jpg */,
+				D2F9B0A6152572A900672F7E /* SDetector.h */,
+				D2F9B0A7152572A900672F7E /* SDetector.m */,
 			);
 			path = Smile1;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				316E41E61524CE7E00707E82 /* main.m in Sources */,
 				316E41EA1524CE7E00707E82 /* AppDelegate.m in Sources */,
 				316E41F31524CEA000707E82 /* MainViewController.m in Sources */,
+				D2F9B0A8152572A900672F7E /* SDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

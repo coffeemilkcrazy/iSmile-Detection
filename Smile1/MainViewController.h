@@ -16,6 +16,8 @@
 #import <opencv2/imgproc/imgproc_c.h>
 #import <opencv2/objdetect/objdetect.hpp>
 
+#import "SDetector.h"
+
 @interface MainViewController : UIViewController
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 {
