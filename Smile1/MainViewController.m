@@ -54,6 +54,8 @@
     NSLog(@"viewDidAppear");
     [super viewDidAppear:YES];
     [self updateButton];
+    [self toggleAuto:nil];
+    [self changeLevel:nil];
     [progressView setProgress:0.00];
 	// Create a new image picker instance:
     //	cameraPicker = [[UIImagePickerController alloc] init];
@@ -81,7 +83,7 @@
     //        previewTimer = [NSTimer scheduledTimerWithTimeInterval:3.5 
     //														 target:self selector:@selector(previewCheck) userInfo:nil repeats:YES];
     
-        [NSTimer scheduledTimerWithTimeInterval:1
+        [NSTimer scheduledTimerWithTimeInterval:0.6
                                          target:self
                                        selector:@selector(smileDetection)
                                        userInfo:nil
@@ -247,20 +249,20 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (IBAction)changeLevel:(id)sender {
     switch (segmentLevel.selectedSegmentIndex) {
+        case 0:
+            currentLevel = 2.0;
+            break;
         case 1:
-            currentLevel = 2.4;
+            currentLevel = 2.5;
             break;
         case 2:
-            currentLevel = 2.8;
+            currentLevel = 3.0;
             break;
         case 3:
-            currentLevel = 3.4;
+            currentLevel = 3.5;
             break;
         case 4:
-            currentLevel = 3.8;
-            break;
-        case 5:
-            currentLevel = 4.4;
+            currentLevel = 4.0;
             break;
         default:
             break;
@@ -432,6 +434,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                 scoreLB.text = [NSString stringWithFormat:@"%d",newDiffSUM];
                 
                 if (ratio >= currentLevel && autoON) {
+                    NSLog(@"Capture At %f > %f", ratio,currentLevel);
                     AudioServicesPlaySystemSound(1108);
                 }
             }            
