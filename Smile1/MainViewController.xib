@@ -247,11 +247,26 @@
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
+							<object class="IBUIView" id="355563149">
+								<reference key="NSNextResponder" ref="390989603"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{160, 230}, {0, 0}}</string>
+								<reference key="NSSuperview" ref="390989603"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="110391910"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+									<reference key="NSCustomColorSpace" ref="261317185"/>
+								</object>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							</object>
 						</array>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="110391910"/>
+						<reference key="NSNextKeyView" ref="355563149"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -351,6 +366,14 @@
 					<int key="connectionID">28</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pointView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="355563149"/>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">toggleHUD:</string>
 						<reference key="source" ref="1069095033"/>
@@ -406,6 +429,7 @@
 							<reference ref="751321904"/>
 							<reference ref="686388207"/>
 							<reference ref="857757796"/>
+							<reference ref="355563149"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 						<string key="objectName">HUD</string>
@@ -479,6 +503,12 @@
 						<reference key="object" ref="606801887"/>
 						<reference key="parent" ref="137722419"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">35</int>
+						<reference key="object" ref="355563149"/>
+						<reference key="parent" ref="390989603"/>
+						<string key="objectName">Point</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -500,13 +530,14 @@
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -532,6 +563,7 @@
 						<string key="leftEye">UIView</string>
 						<string key="leftEyeView">UIView</string>
 						<string key="mouth">UIView</string>
+						<string key="pointView">UIView</string>
 						<string key="previewImgaeView">UIImageView</string>
 						<string key="previewView">UIView</string>
 						<string key="scoreLB">UILabel</string>
@@ -565,6 +597,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="mouth">
 							<string key="name">mouth</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pointView">
+							<string key="name">pointView</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="previewImgaeView">

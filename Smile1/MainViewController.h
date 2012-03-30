@@ -39,6 +39,7 @@
     IBOutlet UIView* leftEyeView;
     IBOutlet UIView* leftEye;
     IBOutlet UIView* mouth;
+    IBOutlet UIView* pointView;
     IBOutlet UIImageView *testCam;
     
     UIImage *resizeImage;

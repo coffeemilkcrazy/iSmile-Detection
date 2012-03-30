@@ -240,7 +240,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 #pragma mark - Detect
 
 - (IBAction)toggleHUD:(id)sender {
-    HUDView.hidden = !HUDView.hidden;
+    //HUDView.hidden = !HUDView.hidden;
+    leftEye.hidden = !leftEye.hidden;
+    leftEyeView.hidden = !leftEyeView.hidden;
+    mouth.hidden = !mouth.hidden;
     smileView.hidden = !smileView.hidden;
     histogramImageView.hidden = !histogramImageView.hidden;
 }
@@ -317,6 +320,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             // create a UIView with a size based on the width of the face
             
             CGRect mouthRect = CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2, faceFeature.mouthPosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4);
+            
+            CGRect pointRect = CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2, faceFeature.mouthPosition.y-faceWidth*0.2, 3, 3);
+            
+            pointView.frame = pointRect;
+            [pointView setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.5]];
+            // set the position of the mouthView based on the face
+            [pointView setCenter:faceFeature.mouthPosition];
+            // round the corners
+            pointView.layer.cornerRadius = faceWidth*0.2;
             
             //float topSpace = faceFeature.bounds.origin.y;
             float bottomSpace = 460- (faceFeature.bounds.origin.y+faceFeature.bounds.size.height);
