@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		316E41DA1524CE7E00707E82 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E41D91524CE7E00707E82 /* UIKit.framework */; };
+		316E41DC1524CE7E00707E82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E41DB1524CE7E00707E82 /* Foundation.framework */; };
+		316E41DE1524CE7E00707E82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E41DD1524CE7E00707E82 /* CoreGraphics.framework */; };
+		316E41E41524CE7E00707E82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 316E41E21524CE7E00707E82 /* InfoPlist.strings */; };
+		316E41E61524CE7E00707E82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 316E41E51524CE7E00707E82 /* main.m */; };
+		316E41EA1524CE7E00707E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 316E41E91524CE7E00707E82 /* AppDelegate.m */; };
+		316E41F31524CEA000707E82 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 316E41F11524CEA000707E82 /* MainViewController.m */; };
+		316E41F41524CEA000707E82 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316E41F21524CEA000707E82 /* MainViewController.xib */; };
+		316E41FE1524D55200707E82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E41FD1524D55200707E82 /* QuartzCore.framework */; };
+		316E42081524E83000707E82 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E42071524E83000707E82 /* CoreVideo.framework */; };
+		316E420A1524E83700707E82 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E42091524E83700707E82 /* CoreMedia.framework */; };
+		316E420C1524E83D00707E82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E420B1524E83D00707E82 /* AVFoundation.framework */; };
+		316E420E1524F04E00707E82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E420D1524F04E00707E82 /* CoreImage.framework */; };
+		316E42101524F42100707E82 /* img1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 316E420F1524F42100707E82 /* img1.JPG */; };
+		316E422015250A8B00707E82 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316E421F15250A8B00707E82 /* CoreData.framework */; };
+		3181CB3015250C9E00B1C43B /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2D15250C9E00B1C43B /* libopencv_core.a */; };
+		3181CB3115250C9E00B1C43B /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2E15250C9E00B1C43B /* libopencv_imgproc.a */; };
+		3181CB3215250C9E00B1C43B /* libopencv_objdetect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */; };
+		3181CB351525136500B1C43B /* Histogram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3181CB341525136500B1C43B /* Histogram.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		316E41D51524CE7E00707E82 /* Smile1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smile1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		316E41D91524CE7E00707E82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		316E41DB1524CE7E00707E82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		316E41DD1524CE7E00707E82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		316E41E11524CE7E00707E82 /* Smile1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Smile1-Info.plist"; sourceTree = "<group>"; };
+		316E41E31524CE7E00707E82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		316E41E51524CE7E00707E82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		316E41E71524CE7E00707E82 /* Smile1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smile1-Prefix.pch"; sourceTree = "<group>"; };
+		316E41E81524CE7E00707E82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		316E41E91524CE7E00707E82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		316E41F01524CEA000707E82 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		316E41F11524CEA000707E82 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		316E41F21524CEA000707E82 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		316E41FD1524D55200707E82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		316E42071524E83000707E82 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		316E42091524E83700707E82 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		316E420B1524E83D00707E82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		316E420D1524F04E00707E82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		316E420F1524F42100707E82 /* img1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.JPG; sourceTree = "<group>"; };
+		316E421F15250A8B00707E82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3181CB2D15250C9E00B1C43B /* libopencv_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_core.a; path = opencv_device/lib/libopencv_core.a; sourceTree = "<group>"; };
+		3181CB2E15250C9E00B1C43B /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_imgproc.a; path = opencv_device/lib/libopencv_imgproc.a; sourceTree = "<group>"; };
+		3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_objdetect.a; path = opencv_device/lib/libopencv_objdetect.a; sourceTree = "<group>"; };
+		3181CB341525136500B1C43B /* Histogram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Histogram.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		316E41D21524CE7E00707E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				316E422015250A8B00707E82 /* CoreData.framework in Frameworks */,
+				316E420E1524F04E00707E82 /* CoreImage.framework in Frameworks */,
+				316E420C1524E83D00707E82 /* AVFoundation.framework in Frameworks */,
+				316E420A1524E83700707E82 /* CoreMedia.framework in Frameworks */,
+				316E42081524E83000707E82 /* CoreVideo.framework in Frameworks */,
+				316E41FE1524D55200707E82 /* QuartzCore.framework in Frameworks */,
+				316E41DA1524CE7E00707E82 /* UIKit.framework in Frameworks */,
+				316E41DC1524CE7E00707E82 /* Foundation.framework in Frameworks */,
+				316E41DE1524CE7E00707E82 /* CoreGraphics.framework in Frameworks */,
+				3181CB3015250C9E00B1C43B /* libopencv_core.a in Frameworks */,
+				3181CB3115250C9E00B1C43B /* libopencv_imgproc.a in Frameworks */,
+				3181CB3215250C9E00B1C43B /* libopencv_objdetect.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		316E41CA1524CE7D00707E82 = {
+			isa = PBXGroup;
+			children = (
+				316E421F15250A8B00707E82 /* CoreData.framework */,
+				316E420D1524F04E00707E82 /* CoreImage.framework */,
+				316E420B1524E83D00707E82 /* AVFoundation.framework */,
+				316E42091524E83700707E82 /* CoreMedia.framework */,
+				316E42071524E83000707E82 /* CoreVideo.framework */,
+				316E41FD1524D55200707E82 /* QuartzCore.framework */,
+				316E41DF1524CE7E00707E82 /* Smile1 */,
+				316E41D81524CE7E00707E82 /* Frameworks */,
+				316E41D61524CE7E00707E82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		316E41D61524CE7E00707E82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				316E41D51524CE7E00707E82 /* Smile1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		316E41D81524CE7E00707E82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3181CB2D15250C9E00B1C43B /* libopencv_core.a */,
+				3181CB2E15250C9E00B1C43B /* libopencv_imgproc.a */,
+				3181CB2F15250C9E00B1C43B /* libopencv_objdetect.a */,
+				316E41D91524CE7E00707E82 /* UIKit.framework */,
+				316E41DB1524CE7E00707E82 /* Foundation.framework */,
+				316E41DD1524CE7E00707E82 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		316E41DF1524CE7E00707E82 /* Smile1 */ = {
+			isa = PBXGroup;
+			children = (
+				316E41E81524CE7E00707E82 /* AppDelegate.h */,
+				316E41E91524CE7E00707E82 /* AppDelegate.m */,
+				316E420F1524F42100707E82 /* img1.JPG */,
+				316E41E01524CE7E00707E82 /* Supporting Files */,
+				316E41F01524CEA000707E82 /* MainViewController.h */,
+				316E41F11524CEA000707E82 /* MainViewController.m */,
+				316E41F21524CEA000707E82 /* MainViewController.xib */,
+				3181CB341525136500B1C43B /* Histogram.jpg */,
+			);
+			path = Smile1;
+			sourceTree = "<group>";
+		};
+		316E41E01524CE7E00707E82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				316E41E11524CE7E00707E82 /* Smile1-Info.plist */,
+				316E41E21524CE7E00707E82 /* InfoPlist.strings */,
+				316E41E51524CE7E00707E82 /* main.m */,
+				316E41E71524CE7E00707E82 /* Smile1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		316E41D41524CE7E00707E82 /* iSmile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 316E41ED1524CE7E00707E82 /* Build configuration list for PBXNativeTarget "iSmile" */;
+			buildPhases = (
+				316E41D11524CE7E00707E82 /* Sources */,
+				316E41D21524CE7E00707E82 /* Frameworks */,
+				316E41D31524CE7E00707E82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSmile;
+			productName = Smile1;
+			productReference = 316E41D51524CE7E00707E82 /* Smile1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		316E41CC1524CE7D00707E82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 316E41CF1524CE7D00707E82 /* Build configuration list for PBXProject "Smile1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 316E41CA1524CE7D00707E82;
+			productRefGroup = 316E41D61524CE7E00707E82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				316E41D41524CE7E00707E82 /* iSmile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		316E41D31524CE7E00707E82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				316E41E41524CE7E00707E82 /* InfoPlist.strings in Resources */,
+				316E41F41524CEA000707E82 /* MainViewController.xib in Resources */,
+				316E42101524F42100707E82 /* img1.JPG in Resources */,
+				3181CB351525136500B1C43B /* Histogram.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		316E41D11524CE7E00707E82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				316E41E61524CE7E00707E82 /* main.m in Sources */,
+				316E41EA1524CE7E00707E82 /* AppDelegate.m in Sources */,
+				316E41F31524CEA000707E82 /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		316E41E21524CE7E00707E82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				316E41E31524CE7E00707E82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		316E41EB1524CE7E00707E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		316E41EC1524CE7E00707E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		316E41EE1524CE7E00707E82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smile1/Smile1-Prefix.pch";
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "\"$(SRCROOT)/opencv_device/include\"";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/opencv_simulator/include\"";
+				INFOPLIST_FILE = "Smile1/Smile1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/opencv_device/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		316E41EF1524CE7E00707E82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smile1/Smile1-Prefix.pch";
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "\"$(SRCROOT)/opencv_device/include\"";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "\"$(SRCROOT)/opencv_simulator/include\"";
+				INFOPLIST_FILE = "Smile1/Smile1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/opencv_device/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		316E41CF1524CE7D00707E82 /* Build configuration list for PBXProject "Smile1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				316E41EB1524CE7E00707E82 /* Debug */,
+				316E41EC1524CE7E00707E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		316E41ED1524CE7E00707E82 /* Build configuration list for PBXNativeTarget "iSmile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				316E41EE1524CE7E00707E82 /* Debug */,
+				316E41EF1524CE7E00707E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 316E41CC1524CE7D00707E82 /* Project object */;
+}
