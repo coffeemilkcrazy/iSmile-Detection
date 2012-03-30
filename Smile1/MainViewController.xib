@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1280</int>
 		<string key="IBDocument.SystemVersion">11D50b</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
@@ -384,13 +384,12 @@
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">266</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUISegmentedControl" id="693392970">
+							<object class="IBUISegmentedControl" id="669639877">
 								<reference key="NSNextResponder" ref="137722419"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{160, 8}, {154, 30}}</string>
 								<reference key="NSSuperview" ref="137722419"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -437,7 +436,7 @@
 						<string key="NSFrame">{{0, 437}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="693392970"/>
+						<reference key="NSNextKeyView" ref="669639877"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -460,14 +459,14 @@
 								<reference key="IBUIToolbar" ref="137722419"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="394241297">
+							<object class="IBUIBarButtonItem" id="506894087">
 								<string key="IBUITitle">Lv</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="137722419"/>
 							</object>
-							<object class="IBUIBarButtonItem" id="607492228">
+							<object class="IBUIBarButtonItem" id="876602840">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUICustomView" ref="693392970"/>
+								<reference key="IBUICustomView" ref="669639877"/>
 								<reference key="IBUIToolbar" ref="137722419"/>
 							</object>
 						</array>
@@ -603,7 +602,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">segmentLevel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="693392970"/>
+						<reference key="destination" ref="669639877"/>
 					</object>
 					<int key="connectionID">56</int>
 				</object>
@@ -618,6 +617,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">captureStillImage:</string>
+						<reference key="source" ref="606801887"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">toggleAuto:</string>
 						<reference key="source" ref="682665598"/>
 						<reference key="destination" ref="372490531"/>
@@ -628,7 +635,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">changeLevel:</string>
-						<reference key="source" ref="693392970"/>
+						<reference key="source" ref="669639877"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">13</int>
 					</object>
@@ -739,8 +746,8 @@
 							<reference ref="521639368"/>
 							<reference ref="905901329"/>
 							<reference ref="606801887"/>
-							<reference ref="607492228"/>
-							<reference ref="394241297"/>
+							<reference ref="876602840"/>
+							<reference ref="506894087"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -797,16 +804,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
-						<reference key="object" ref="607492228"/>
+						<reference key="object" ref="876602840"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="693392970"/>
+							<reference ref="669639877"/>
 						</array>
 						<reference key="parent" ref="137722419"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
-						<reference key="object" ref="693392970"/>
-						<reference key="parent" ref="607492228"/>
+						<reference key="object" ref="669639877"/>
+						<reference key="parent" ref="876602840"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">49</int>
@@ -820,7 +827,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">54</int>
-						<reference key="object" ref="394241297"/>
+						<reference key="object" ref="506894087"/>
 						<reference key="parent" ref="137722419"/>
 					</object>
 				</array>
@@ -862,7 +869,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">58</int>
+			<int key="maxID">59</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -870,11 +877,16 @@
 					<string key="className">MainViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="captureStillImage:">id</string>
 						<string key="changeLevel:">id</string>
 						<string key="toggleAuto:">id</string>
 						<string key="toggleHUD:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="captureStillImage:">
+							<string key="name">captureStillImage:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="changeLevel:">
 							<string key="name">changeLevel:</string>
 							<string key="candidateClassName">id</string>
@@ -986,10 +998,6 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
