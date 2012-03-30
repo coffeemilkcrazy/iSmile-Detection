@@ -378,7 +378,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 }
 
 - (void)smileDetection {
-    [self performSelectorOnMainThread:@selector(markFaces:) withObject:resizeImage waitUntilDone:NO];
+    //[self performSelectorOnMainThread:@selector(markFaces:) withObject:resizeImage waitUntilDone:NO];
+    [self performSelectorInBackground:@selector(markFaces:) withObject:resizeImage];
 }
 
 
